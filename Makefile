@@ -2,14 +2,14 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SOURCES = ...
 OBJS = $(SOURCES:.c=.o)
-NAME = libftprintf.a
+NAME = ...
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
-%.o : %.c ft_printf.h
+%.o : %.c ...
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
