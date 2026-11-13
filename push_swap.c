@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/13 15:19:09 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/13 16:36:39 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "ft_printf.h"
 
 static void	add_node(t_stack **stack, char *str)
 {
@@ -22,7 +21,7 @@ static void	add_node(t_stack **stack, char *str)
 static int	get_error(char *error, int errcode)
 {
 	if (errcode == 2)
-		ft_printf("too much flags used \"%s\",aborting.\n", error);
+		ft_printf("too much flags used \"%s\", aborting.\n", error);
 	else
 		ft_printf("invalid argument given (\"%s\"), aborting.\n", error);
 	return (1);
