@@ -1,22 +1,34 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SOURCES = ...
+SOURCES = push_swap.c
 OBJS = $(SOURCES:.c=.o)
-NAME = ....
+NAME = push_swap 
+LIBFT_DIR = libft
+FT_PRINTF_DIR = ft_printf
+LIBFT = $(LIBFT_DIR)/libft.a
+FT_PRINTF = $(FT_PRINTF_DIR)/ft_printf.a
 
-all: $(NAME)
+all: $(LIBFT) $(FT_PRINTF) $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) $(FT_PRINTF) $(LIBFT) -o $@ 
 
-%.o : %.c ...
-	$(CC) $(CFLAGS) -c $< -o $@
+$(LIBFT):
+	@make -C $(LIBFT_DIR)
+
+$(FT_PRINTF):
+	@make -C $(FT_PRINTF_DIR)
+
+%.o : %.c 
+	$(CC) $(CFLAGS) -c $< -o $@ -I$(LIBFT_DIR) -I$(FT_PRINTF_DIR)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) 
+	@make -C libft fclean
+	@make -C ft_printf fclean
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) 
 
 re: fclean all
 
