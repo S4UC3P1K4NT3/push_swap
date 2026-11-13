@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/13 09:39:58 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/11/13 10:29:34 by gtomasin        ###   ########.fr        */
+/*   Updated: 2026/11/13 10:31:03 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int	main(int argc, char *argv[])
 	t_stack	**a_stack;
 
 	i = 0;
+	a_stack = NULL;
 	strategy = 4;
 	while (argv[++i])
 	{
