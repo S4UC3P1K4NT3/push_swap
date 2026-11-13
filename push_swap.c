@@ -1,58 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   push_swap.c                                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/13 09:39:58 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/11/13 10:31:03 by gtomasin        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
+/*   Updated: 2026/11/13 13:12:45 by gtomasin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_printf.h"
-
-static int	is_flag(char *str, char *flag)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] && flag[i] && str[i] == flag[i])
-		i++;
-	return (str[i] == flag[i]);
-}
-
-static int	is_integer(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	if (str[i] == '\0')
-		return (-1);
-	while (str[i] >= '0' && str[i] <= '9')
-		i++;
-	if (str[i] == '\0')
-		return (0);
-	return (-1);
-}
-
-static int	check4flags(char *str)
-{
-	if (!str)
-		return (-1);
-	if (is_flag(str, "--simple"))
-		return (1);
-	if (is_flag(str, "--medium"))
-		return (2);
-	if (is_flag(str, "--complex"))
-		return (3);
-	if (is_flag(str, "--adaptive"))
-		return (4);
-	return (is_integer(str));
-}
 
 int	main(int argc, char *argv[])
 {
@@ -62,12 +21,23 @@ int	main(int argc, char *argv[])
 
 	i = 0;
 	a_stack = NULL;
-	strategy = 4;
-	while (argv[++i])
+	strategy = 5;
+	while (argv[++i] && i < argc)
 	{
 		if (check4flags(argv[i]) == 0)
 			add_node(a_stack);
-		else
+		else if (strategy == 5 && check4flags(argv[i]) > 0)
 			strategy = check4flags(argv[i]);
+		else if (strategy != 5 && check4flags(argv[i]) > 0)
+		{
+			ft_printf("too much flag used ' %s '.", argv[i])
+			return (1);
+		}
+		else
+		{
+			ft_printf("invalid argument given (' %s ').", argv[i])
+			return (1);
+		}
+		return (0);
 	}
 }
