@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/13 13:12:45 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/13 13:27:37 by gtomasin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ int	main(int argc, char *argv[])
 			strategy = check4flags(argv[i]);
 		else if (strategy != 5 && check4flags(argv[i]) > 0)
 		{
-			ft_printf("too much flag used ' %s '.", argv[i])
+			ft_printf("too much flags used '%s'.", argv[i]);
 			return (1);
 		}
 		else
 		{
-			ft_printf("invalid argument given (' %s ').", argv[i])
+			ft_printf("invalid argument given ('%s').", argv[i]);
 			return (1);
 		}
-		return (0);
 	}
+	return (0);
 }

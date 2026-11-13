@@ -1,12 +1,12 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SOURCES = push_swap.c
+SOURCES = push_swap.c main_utils.c
 OBJS = $(SOURCES:.c=.o)
 NAME = push_swap 
 LIBFT_DIR = libft
 FT_PRINTF_DIR = ft_printf
 LIBFT = $(LIBFT_DIR)/libft.a
-FT_PRINTF = $(FT_PRINTF_DIR)/ft_printf.a
+FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 
 all: $(LIBFT) $(FT_PRINTF) $(NAME)
 
