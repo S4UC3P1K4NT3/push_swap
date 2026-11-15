@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/13 09:39:58 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/11/15 14:17:30 by gtomasin        ###   ########.fr        */
+/*   Updated: 2026/11/15 15:25:41 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int argc, char *argv[])
 	while (argv[++i] && i < argc)
 	{
 		if (check4flags(argv[i]) == 0)
-			add_node(a_stack, argv[i]);
+			ft_stackadd_back(a_stack, argv[i]);
 		else if (strategy == 5 && check4flags(argv[i]) > 0)
 			strategy = check4flags(argv[i]);
 		else if (strategy != 5 && check4flags(argv[i]) > 0)
