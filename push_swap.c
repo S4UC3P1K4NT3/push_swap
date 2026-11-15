@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/13 16:36:39 by jeguiber         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   push_swap.c                                       :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/11/13 09:39:58 by gtomasin         #+#    #+#              */
+/*   Updated: 2026/11/15 14:17:30 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	add_node(t_stack **stack, char *str)
-{
-	(void) stack;
-	ft_printf("node \"%s\" added during the test.\n", str);
-}
 
 static int	get_error(char *error, int errcode)
 {
