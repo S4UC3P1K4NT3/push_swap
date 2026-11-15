@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/13 09:33:37 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/11/15 14:17:55 by gtomasin        ###   ########.fr        */
+/*   Updated: 2026/11/15 15:16:59 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ typedef struct s_stack
 int		check4flags(char *str);
 int		is_integer(char *str);
 int		is_flag(char *str, char *flag);
-void	add_node(t_stack **stack, char *str);
+void	ft_lstadd_back(t_stack **lst, t_stack *new);
+t_stack	*new_stack(void *content);
+t_stack	*ft_stacklast(t_stack *lst);
+t_stack	*ft_stackfirst(t_stack *lst);
 
 #endif
