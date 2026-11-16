@@ -28,7 +28,7 @@ void	ft_stackadd_back(t_stack **lst, int content)
 	new->prev = ft_stacklast(*lst);
 }
 
-t_stack	*new_stack(void *content)
+t_stack	*new_stack(int content)
 {
 	t_stack	*new;
 

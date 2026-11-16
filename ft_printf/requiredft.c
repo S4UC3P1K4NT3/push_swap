@@ -6,13 +6,13 @@
 /*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/31 17:17:01 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/11/02 00:06:15 by gtomasin        ###   ########.fr        */
+/*   Updated: 2026/11/16 10:07:44 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_fd(int nb, int fd)
+int	ft_putnbr_int(int nb, int fd)
 {
 	char	c;
 	int		len;
@@ -26,7 +26,7 @@ int	ft_putnbr_fd(int nb, int fd)
 		nb = -nb;
 	}
 	if (nb >= 10)
-		len += ft_putnbr_fd(nb / 10, fd);
+		len += ft_putnbr_int(nb / 10, fd);
 	c = nb % 10 + '0';
 	if (write(fd, &c, 1) < 0)
 		return (-1);
@@ -34,12 +34,12 @@ int	ft_putnbr_fd(int nb, int fd)
 	return (len);
 }
 
-int	ft_putchar_fd(char c, int fd)
+int	ft_putchar_int(char c, int fd)
 {
 	return (write(fd, &c, 1));
 }
 
-int	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_int(char *s, int fd)
 {
 	int	len;
 

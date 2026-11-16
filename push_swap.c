@@ -6,11 +6,20 @@
 /*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/13 09:39:58 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/11/15 15:25:41 by gtomasin        ###   ########.fr        */
+/*   Updated: 2026/11/16 10:13:43 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	print_nodes(t_stack *stack)
+{
+	while (stack != NULL)
+	{
+		ft_printf("%d\n", stack->content);
+		stack = stack->next;
+	}
+}
 
 static int	get_error(char *error, int errcode)
 {
@@ -25,7 +34,7 @@ int	main(int argc, char *argv[])
 {
 	int		i;
 	int		strategy;
-	t_stack	**a_stack;
+	t_stack	*a_stack;
 
 	i = 0;
 	a_stack = NULL;
@@ -33,7 +42,7 @@ int	main(int argc, char *argv[])
 	while (argv[++i] && i < argc)
 	{
 		if (check4flags(argv[i]) == 0)
-			ft_stackadd_back(a_stack, argv[i]);
+			ft_stackadd_back(&a_stack, ft_atoi(argv[i]));
 		else if (strategy == 5 && check4flags(argv[i]) > 0)
 			strategy = check4flags(argv[i]);
 		else if (strategy != 5 && check4flags(argv[i]) > 0)
@@ -41,5 +50,6 @@ int	main(int argc, char *argv[])
 		else
 			return (get_error(argv[i], 1));
 	}
+	print_nodes(a_stack);
 	return (0);
 }

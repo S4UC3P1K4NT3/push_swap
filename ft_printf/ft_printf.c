@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/31 16:52:40 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/10/31 23:07:09 by gtomasin        ###   ########.fr        */
+/*   Updated: 2026/11/16 10:07:34 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ static int	ft_putptr(void *ptr)
 	int	ret;
 
 	if (!ptr)
-		return (ft_putstr_fd("(nil)", 1));
-	len = ft_putstr_fd("0x", 1);
+		return (ft_putstr_int("(nil)", 1));
+	len = ft_putstr_int("0x", 1);
 	if (len < 0)
 		return (-1);
 	ret = ft_puthex((unsigned long) ptr, "0123456789abcdef");
@@ -31,13 +31,13 @@ static int	ft_putptr(void *ptr)
 static int	getvalue(char c, va_list args)
 {
 	if (c == 'c')
-		return (ft_putchar_fd(va_arg(args, int), 1));
+		return (ft_putchar_int(va_arg(args, int), 1));
 	else if (c == 's')
-		return (ft_putstr_fd(va_arg(args, char *), 1));
+		return (ft_putstr_int(va_arg(args, char *), 1));
 	else if (c == 'd' || c == 'i')
-		return (ft_putnbr_fd(va_arg(args, int), 1));
+		return (ft_putnbr_int(va_arg(args, int), 1));
 	else if (c == '%')
-		return (ft_putchar_fd('%', 1));
+		return (ft_putchar_int('%', 1));
 	else if (c == 'u')
 		return (ft_putunbr(va_arg(args, unsigned int)));
 	else if (c == 'x')
@@ -66,7 +66,7 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 			tmp = getvalue(str[++i], args);
 		else
-			tmp = ft_putchar_fd(str[i], 1);
+			tmp = ft_putchar_int(str[i], 1);
 		if (tmp < 0)
 			return (va_end(args), -1);
 		len += tmp;
