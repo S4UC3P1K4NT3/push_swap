@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/17 09:53:04 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/17 10:11:17 by gtomasin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ static int	get_error(char *error, int errcode)
 		ft_printf("too much flags used \"%s\", aborting.\n", error);
 	if (errcode == 3)
 		ft_printf("numbers cannot be duplicates \"%s\", aborting.\n", error);
+	if (errcode == 4)
+		ft_printf("number goes beyond integer max \"%s\", aborting.\n", error);
 	else
 		ft_printf("invalid argument given (\"%s\"), aborting.\n", error);
 	return (1);
@@ -69,6 +71,8 @@ int	main(int argc, char *argv[])
 			return (get_error(argv[i], 2));
 		else if (check4flags(argv[i]) == 0 && dupecheck(argv[i], a_stack) == 1)
 			return (get_error(argv[i], 3));
+		else if (check4flags(argv[i]) == -2)
+			return (get_error(argv[i], 4));
 		else
 			return (get_error(argv[i], 1));
 	}

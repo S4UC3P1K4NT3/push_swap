@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 12:49:03 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/17 09:55:37 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/17 10:14:41 by gtomasin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,33 @@ int	is_flag(char *str, char *flag)
 	return (str[i] == flag[i]);
 }
 
+int	int_max_check(const char *str)
+{
+	long long int	res;
+	int				pos;
+	int				sign;
+
+	sign = 1;
+	res = 0;
+	pos = 0;
+	while ((str[pos] <= 13 && str[pos] >= 9) || str[pos] == 32)
+		pos++;
+	if (str[pos] == '-' || str[pos] == '+')
+	{
+		if (str[pos] == '-')
+			sign = sign * -1;
+		pos++;
+	}
+	while (ft_isdigit(str[pos]))
+	{
+		res = (res * 10) + (str[pos] - 48);
+		pos++;
+	}
+	if (res > 2147483647 || res < -2147483648)
+		return (-2);
+	return (0);
+}
+
 int	is_integer(char *str)
 {
 	int	i;
@@ -34,7 +61,7 @@ int	is_integer(char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 		i++;
 	if (str[i] == '\0')
-		return (0);
+		return (int_max_check(str));
 	return (-1);
 }
 
