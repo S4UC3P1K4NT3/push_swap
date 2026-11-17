@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*   stack_utils1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 14:15:08 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/17 09:53:28 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/17 15:49:21 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,10 @@ size_t	ft_stacklen(t_stack *stack)
 	stack = ft_stackfirst(stack);
 	if (!stack)
 		return (0);
-	while (stack->next)
+	while (stack != NULL)
+	{
 		i++;
+		stack = stack->next;
+	}
 	return (i);
 }

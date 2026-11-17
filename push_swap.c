@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/17 10:37:34 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/17 15:53:26 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,11 @@ int	main(int argc, char *argv[])
 	int		i;
 	int		strategy;
 	t_stack	*a_stack;
+	t_stack	*b_stack;
 
 	i = 0;
 	a_stack = NULL;
+	b_stack = NULL;
 	strategy = 5;
 	while (argv[++i] && i < argc)
 	{
@@ -77,6 +79,9 @@ int	main(int argc, char *argv[])
 			return (get_error(argv[i], 1));
 	}
 	// sort(strategy, a_stack);
+	b_stack = new_stack(7);
+	pa(&a_stack, &b_stack);
 	print_nodes(a_stack);
+	print_nodes(b_stack);
 	return (0);
 }

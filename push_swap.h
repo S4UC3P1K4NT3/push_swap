@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:33:37 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/17 09:52:24 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/17 15:46:15 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ void	ft_stackadd_back(t_stack **lst, int content);
 t_stack	*new_stack(int content);
 t_stack	*ft_stacklast(t_stack *lst);
 t_stack	*ft_stackfirst(t_stack *lst);
+size_t	ft_stacklen(t_stack *stack);
 int		dupecheck(char *str, t_stack *lst);
+
+void	sa(t_stack **lst);
+void	ss(t_stack **lsta, t_stack **lstb);
+void	pa(t_stack **lsta, t_stack **lstb);
 
 #endif

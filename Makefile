@@ -1,6 +1,6 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SOURCES = push_swap.c main_utils.c stack_utils.c
+SOURCES = push_swap.c main_utils.c stack_utils1.c ope_utils/pa.c
 OBJS = $(SOURCES:.c=.o)
 NAME = push_swap 
 LIBFT_DIR = libft

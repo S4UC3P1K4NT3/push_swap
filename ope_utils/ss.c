@@ -6,11 +6,11 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/17 09:48:06 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/17 12:43:06 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/17 14:55:47 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ss(t_stack **lsta, t_stack **lstb)
 {
