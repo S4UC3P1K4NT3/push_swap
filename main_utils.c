@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 12:49:03 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/17 10:14:41 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/17 10:45:34 by gtomasin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int	int_max_check(const char *str)
 		res = (res * 10) + (str[pos] - 48);
 		pos++;
 	}
+	res = res * sign;
 	if (res > 2147483647 || res < -2147483648)
 		return (-2);
 	return (0);
