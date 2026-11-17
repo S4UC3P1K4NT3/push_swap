@@ -4,6 +4,6 @@
 
 void	rr(t_stack **lsta, t_stack **lstb)
 {
-	ra(*lsta);
-	ra(*lstb);
+	ra(lsta);
+	ra(lstb);
 }
