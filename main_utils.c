@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   main_utils.c                                      :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/13 12:49:03 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/11/13 12:51:40 by gtomasin        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   main_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/13 12:49:03 by gtomasin          #+#    #+#             */
+/*   Updated: 2026/11/17 09:55:37 by gtomasin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,19 @@ int	check4flags(char *str)
 	if (is_flag(str, "--adaptive"))
 		return (4);
 	return (is_integer(str));
+}
+
+int	dupecheck(char *str, t_stack *lst)
+{
+	int	nmb;
+
+	nmb = atoi(str);
+	lst = ft_stackfirst(lst);
+	while (lst)
+	{
+		if (lst->content == nmb)
+			return (1);
+		lst = lst->next;
+	}
+	return (0);
 }
