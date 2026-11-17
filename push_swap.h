@@ -6,7 +6,7 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:33:37 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/17 15:46:15 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/17 16:40:54 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ int		dupecheck(char *str, t_stack *lst);
 void	sa(t_stack **lst);
 void	ss(t_stack **lsta, t_stack **lstb);
 void	pa(t_stack **lsta, t_stack **lstb);
+void	ra(t_stack **lst);
 
 #endif
