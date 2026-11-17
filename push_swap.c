@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/17 10:11:17 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/17 10:37:34 by gtomasin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	get_error(char *error, int errcode)
 	if (errcode == 3)
 		ft_printf("numbers cannot be duplicates \"%s\", aborting.\n", error);
 	if (errcode == 4)
-		ft_printf("number goes beyond integer max \"%s\", aborting.\n", error);
+		ft_printf("number goes beyond integer limits \"%s\", aborting.\n", error);
 	else
 		ft_printf("invalid argument given (\"%s\"), aborting.\n", error);
 	return (1);
