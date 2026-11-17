@@ -6,7 +6,7 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/17 09:47:35 by jeguiber          #+#    #+#             */
-/*   Updated: 2026/11/17 15:56:20 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/17 16:02:16 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,18 @@
 
 void	pa(t_stack **lsta, t_stack **lstb)
 {
-	t_stack	*b_top;
-	t_stack	*a_last;
+	t_stack	*tmp;
 
-	if (!lstb || !*lstb)
+	if (!lsta || !lstb || !*lstb)
 		return ;
-	b_top = ft_stacklast(*lstb);
-	if (b_top->prev)
-		b_top->prev->next = NULL;
+	tmp = ft_stacklast(*lstb);
+	*lstb = tmp->prev;
+	if (*lstb)
+		(*lstb)->next = NULL;
+	tmp->prev = ft_stacklast(*lsta);
+	if (tmp->prev)
+		tmp->prev->next = tmp;
 	else
-		*lstb = NULL;
-	if (!lsta || !*lsta)
-	{
-		*lsta = b_top;
-		b_top->prev = NULL;
-	}
-	else
-	{
-		a_last = ft_stacklast(*lsta);
-		a_last->next = b_top;
-		b_top->prev = a_last;
-	}
-	b_top->next = NULL;
-	ft_printf("pa\n");
+		*lsta = tmp;
+	tmp->next = NULL;
 }

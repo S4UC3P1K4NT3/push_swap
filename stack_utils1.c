@@ -6,7 +6,7 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 14:15:08 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/17 15:49:21 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/17 16:10:24 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	ft_stackadd_back(t_stack **lst, int content)
 		*lst = new;
 		return ;
 	}
-	ft_stacklast(*lst)->next = new;
 	new->prev = ft_stacklast(*lst);
+	new->prev->next = new;
 }
 
 t_stack	*new_stack(int content)
