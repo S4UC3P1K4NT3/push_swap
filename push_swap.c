@@ -6,7 +6,7 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/18 10:30:53 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/18 13:32:46 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	main(int argc, char *argv[])
 			return (get_error(argv[i], 1));
 	}
 	// sort(strategy, a_stack);
-	rra(&a_stack);
+	sa(&a_stack);
 	print_nodes(a_stack);
 	// print_nodes(b_stack);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/17 09:47:57 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/17 16:08:45 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/18 13:33:36 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,4 @@ void	sa(t_stack **lst)
 	tmp = ft_stacklast(*lst)->content;
 	ft_stacklast(*lst)->content = ft_stacklast(*lst)->prev->content;
 	ft_stacklast(*lst)->prev->content = tmp;
-	ft_printf("sa\n");
 }
