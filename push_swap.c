@@ -6,7 +6,7 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/17 16:54:05 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/18 10:30:53 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 static void	print_nodes(t_stack *stack)
 {
+	stack = ft_stackfirst(stack);
 	ft_printf("=====================================================");
 	ft_printf("==================\n\n");
 	ft_printf("██████╗ ██╗   ██╗███████╗██╗  ██╗    ");
@@ -58,8 +59,10 @@ int	main(int argc, char *argv[])
 	int		strategy;
 	t_stack	*a_stack;
 
+	// t_stack	*b_stack;
 	i = 0;
 	a_stack = NULL;
+	// b_stack = NULL;
 	strategy = 5;
 	while (argv[++i] && i < argc)
 	{
@@ -77,7 +80,8 @@ int	main(int argc, char *argv[])
 			return (get_error(argv[i], 1));
 	}
 	// sort(strategy, a_stack);
-	ra(&a_stack);
+	rra(&a_stack);
 	print_nodes(a_stack);
+	// print_nodes(b_stack);
 	return (0);
 }
