@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/13 09:39:58 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/11/20 00:49:22 by gtomasin        ###   ########.fr        */
+/*   Updated: 2026/11/20 00:51:59 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,18 @@ static int	print_nodes(t_stack *stack)
 
 static int	sort(int strategy, t_stack **a, t_stack **b)
 {
-	if (strategy == 3)
-		return (merge_sort(a, b), print_nodes(*a));
-	else if (strategy == 2)
-		return (bucket_sort(a), print_nodes(*a));
-	else if (strategy == 1)
-		return (bubble_sort(a), print_nodes(*a));
-	else if (strategy == 4 || strategy == 5)
-	{
-		return ;
-	}
+	// if (strategy == 3)
+	// 	return (merge_sort(a, b), print_nodes(*a));
+	// else if (strategy == 2)
+	// 	return (bucket_sort(a), print_nodes(*a));
+	// else if (strategy == 1)
+	// 	return (bubble_sort(a), print_nodes(*a));
+	// else if (strategy == 4 || strategy == 5)
+	// {
+	// 	return ;
+	// }
+	bucket_sort(a);
+	print_nodes(*a);
 }
 
 static int	get_error(char *er, int errcode)
