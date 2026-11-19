@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/18 13:32:46 by jeguiber         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   push_swap.c                                       :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/11/13 09:39:58 by gtomasin         #+#    #+#              */
+/*   Updated: 2026/11/20 00:49:22 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	sort(int strategy)
+int	compute_disorder(t_stack *a)
+{
+	int	mistakes;
 
-static void	print_nodes(t_stack *stack)
+	mistakes = 0;
+	while (a->next)
+	{
+		if (a->content > a->next->content)
+			mistakes += 1;
+		a = a->next;
+	}
+	return (mistakes);
+}
+
+static int	print_nodes(t_stack *stack)
 {
 	stack = ft_stackfirst(stack);
 	ft_printf("=====================================================");
@@ -38,18 +50,33 @@ static void	print_nodes(t_stack *stack)
 		ft_printf("%d\n", stack->content);
 		stack = stack->next;
 	}
+	return (0);
 }
 
-static int	get_error(char *error, int errcode)
+static int	sort(int strategy, t_stack **a, t_stack **b)
+{
+	if (strategy == 3)
+		return (merge_sort(a, b), print_nodes(*a));
+	else if (strategy == 2)
+		return (bucket_sort(a), print_nodes(*a));
+	else if (strategy == 1)
+		return (bubble_sort(a), print_nodes(*a));
+	else if (strategy == 4 || strategy == 5)
+	{
+		return ;
+	}
+}
+
+static int	get_error(char *er, int errcode)
 {
 	if (errcode == 2)
-		ft_printf("too much flags used \"%s\", aborting.\n", error);
+		ft_printf("too much flags used \"%s\", aborting.\n", er);
 	if (errcode == 3)
-		ft_printf("numbers cannot be duplicates \"%s\", aborting.\n", error);
+		ft_printf("numbers cannot be duplicates \"%s\", aborting.\n", er);
 	if (errcode == 4)
-		ft_printf("number goes beyond integer limits \"%s\", aborting.\n", error);
+		ft_printf("value goes beyond integer's limits \"%s\", aborting.\n", er);
 	else
-		ft_printf("invalid argument given (\"%s\"), aborting.\n", error);
+		ft_printf("invalid argument given (\"%s\"), aborting.\n", er);
 	return (1);
 }
 
@@ -58,11 +85,11 @@ int	main(int argc, char *argv[])
 	int		i;
 	int		strategy;
 	t_stack	*a_stack;
+	t_stack	*b_stack;
 
-	// t_stack	*b_stack;
 	i = 0;
 	a_stack = NULL;
-	// b_stack = NULL;
+	b_stack = NULL;
 	strategy = 5;
 	while (argv[++i] && i < argc)
 	{
@@ -79,9 +106,5 @@ int	main(int argc, char *argv[])
 		else
 			return (get_error(argv[i], 1));
 	}
-	// sort(strategy, a_stack);
-	sa(&a_stack);
-	print_nodes(a_stack);
-	// print_nodes(b_stack);
-	return (0);
+	return (sort(strategy, &a_stack, &b_stack));
 }
