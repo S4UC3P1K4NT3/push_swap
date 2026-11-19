@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/20 00:34:18 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/11/20 00:48:55 by gtomasin        ###   ########.fr        */
+/*   Updated: 2026/11/20 00:57:47 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	bubble_sort(t_stack **a)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	while (compute_disorder(ft_stackfirst(*a)) > 0 && i < ft_stacklen(*a))
