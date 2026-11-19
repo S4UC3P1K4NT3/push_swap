@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/13 09:39:58 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/11/20 00:54:01 by gtomasin        ###   ########.fr        */
+/*   Updated: 2026/11/20 00:54:41 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ static int	sort(int strategy, t_stack **a, t_stack **b)
 	// {
 	// 	return ;
 	// }
-	strategy = (void *) strategy;
+	(void *) strategy;
+	(void *) b;
 	bubble_sort(a);
 	print_nodes(*a);
 	return (0);
