@@ -6,7 +6,7 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 13:52:58 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/20 16:48:41 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,4 @@ int	main(int argc, char *argv[])
 	}
 	bucket_sort(&a_stack, &b_stack);
 	print_nodes(a_stack);
-	print_nodes(b_stack);
 }
