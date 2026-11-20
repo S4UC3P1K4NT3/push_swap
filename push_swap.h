@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:33:37 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 16:26:11 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/20 16:52:31 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,15 @@ size_t	ft_stacklen(t_stack *stack);
 int		dupecheck(char *str, t_stack *lst);
 
 void	sa(t_stack **lst);
+void	sb(t_stack **lst);
 void	ss(t_stack **lsta, t_stack **lstb);
 void	pa(t_stack **lsta, t_stack **lstb);
+void	pb(t_stack **lstb, t_stack **lsta);
 void	ra(t_stack **lst);
+void	rb(t_stack **lst);
 void	rr(t_stack **lsta, t_stack **lstb);
 void	rra(t_stack **lst);
+void	rrb(t_stack **lst);
 void	rrr(t_stack **lsta, t_stack **lstb);
 void	bucket_sort(t_stack **a, t_stack **b);
 int		compute_disorder(t_stack *a);

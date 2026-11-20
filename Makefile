@@ -1,6 +1,6 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SOURCES = push_swap.c main_utils.c stack_utils1.c ope_utils/pa.c ope_utils/sa.c ope_utils/ss.c ope_utils/ra.c ope_utils/rr.c ope_utils/rra.c ope_utils/rrr.c bubble_sort.c
+SOURCES = push_swap.c main_utils.c stack_utils1.c ope_utils/pa.c ope_utils/pb.c ope_utils/sa.c ope_utils/sb.c ope_utils/ss.c ope_utils/ra.c ope_utils/rb.c ope_utils/rr.c ope_utils/rra.c ope_utils/rrb.c ope_utils/rrr.c bubble_sort.c
 OBJS = $(SOURCES:.c=.o)
 NAME = push_swap 
 LIBFT_DIR = libft
