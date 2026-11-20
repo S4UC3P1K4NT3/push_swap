@@ -6,22 +6,11 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 11:48:03 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 17:19:05 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/20 17:22:11 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	print_node2(t_stack *stack)
-{
-	stack = ft_stackfirst(stack);
-	while (stack != NULL)
-	{
-		ft_printf("%d ", stack->content);
-		stack = stack->next;
-	}
-	ft_printf("\n");
-}
 
 static size_t	minp(t_stack *b)
 {
