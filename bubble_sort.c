@@ -20,6 +20,7 @@ void	bubble_sort(t_stack **a)
 	i = 0;
 	while (compute_disorder(ft_stackfirst(*a)) > 0 && i < ft_stacklen(*a) - 1)
 	{
+		ft_printf("test : %d\n",(*a)->content);
 		j = 0;
 		while (compute_disorder(ft_stackfirst(*a)) > 0 && j++ < ft_stacklen(*a) - 1)
 		{
