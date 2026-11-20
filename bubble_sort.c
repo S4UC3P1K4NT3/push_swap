@@ -26,8 +26,9 @@ void	bubble_sort(t_stack **a)
 			if ((*a)->content > (*a)->next->content)
 				sa(a);
 			ra(a);
-			*a = ft_stackfirst(*a);
+			*a = (*a)->next;
 		}
+		*a = ft_stackfirst(*a);
 		i++;
 	}
 }
