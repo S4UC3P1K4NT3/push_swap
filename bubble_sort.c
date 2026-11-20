@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/20 00:34:18 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/11/20 00:58:55 by gtomasin        ###   ########.fr        */
+/*   Updated: 2026/11/20 01:00:26 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	bubble_sort(t_stack **a)
 			if ((*a)->content > (*a)->next->content)
 				sa(a);
 			ra(a);
+			a = (*a)->next;
 		}
 		i++;
 	}
