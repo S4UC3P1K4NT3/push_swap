@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 14:15:08 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 12:59:39 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/20 13:52:00 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_stack	*ft_stacklast(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
-	while (lst)
+	while (lst->next)
 		lst = lst->next;
 	return (lst);
 }

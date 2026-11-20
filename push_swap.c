@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 12:49:46 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/20 13:52:58 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,30 +47,25 @@ int	print_nodes(t_stack *stack)
 	ft_printf("==================\n\n");
 	while (stack != NULL)
 	{
-		ft_printf("%d ", stack->content);
+		ft_printf("%d\n", stack->content);
 		stack = stack->next;
 	}
 	return (0);
 }
 
-static int	sort(int strategy, t_stack **a, t_stack **b)
-{
-	// if (strategy == 3)
-	// 	return (merge_sort(a, b), print_nodes(*a));
-	// else if (strategy == 2)
-	// 	return (bucket_sort(a), print_nodes(*a));
-	// else if (strategy == 1)
-	// 	return (bubble_sort(a), print_nodes(*a));
-	// else if (strategy == 4 || strategy == 5)
-	// {
-	// 	return ;
-	// }
-	(void) strategy;
-	(void) b;
-	bubble_sort(a);
-	print_nodes(*a);
-	return (0);
-}
+// static int	sort(int strategy, t_stack **a, t_stack **b)
+// {
+// 	if (strategy == 3)
+// 		return (merge_sort(a, b), print_nodes(*a));
+// 	else if (strategy == 2)
+// 		return (bucket_sort(a, b), print_nodes(*a));
+// 	else if (strategy == 1)
+// 		return (bubble_sort(a), print_nodes(*a));
+// 	else if (strategy == 4 || strategy == 5)
+// 	{
+// 		return ;
+// 	}
+// }
 
 static int	get_error(char *er, int errcode)
 {
@@ -111,5 +106,7 @@ int	main(int argc, char *argv[])
 		else
 			return (get_error(argv[i], 1));
 	}
-	return (sort(strategy, &a_stack, &b_stack));
+	bucket_sort(&a_stack, &b_stack);
+	print_nodes(a_stack);
+	print_nodes(b_stack);
 }

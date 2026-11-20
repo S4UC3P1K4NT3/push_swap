@@ -6,7 +6,7 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 11:48:03 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 13:09:53 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/20 13:19:56 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,29 @@ static size_t	minp(t_stack *b)
 		pos++;
 	}
 	return (minp);
+}
+
+static void	smol_sort(t_stack **a, t_stack **b)
+{
+	size_t	len;
+	size_t	pos;
+	size_t	i;
+	size_t	j;
+
+	len = ft_stacklen(*b);
+	i = 0;
+	while (i < len)
+	{
+		pos = minp(*b);
+		j = 0;
+		while (j < pos)
+		{
+			ra(b);
+			j++;
+		}
+		pa(a, b);
+		i++;
+	}
 }
 
 static void	dis(t_stack **a, t_stack **b, long min, long max, long nb)
@@ -89,5 +112,6 @@ void	bucket_sort(t_stack **a, t_stack **b)
 			max = tmp->content;
 		tmp = tmp->next;
 	}
+	ft_printf("%d - %d\n", min, max);
 	dis(a, b, min, max, nb);
 }
