@@ -16,13 +16,14 @@ void	bubble_sort(t_stack **a)
 {
 	size_t	i;
 	size_t	j;
-
+	size_t  len;
+	len = ft_stacklen(*a);
 	i = 0;
-	while (compute_disorder(ft_stackfirst(*a)) > 0 && i < ft_stacklen(*a) - 1)
+	while (compute_disorder(ft_stackfirst(*a)) > 0 && i < len - 1)
 	{
 		ft_printf("test : %d\n",(*a)->content);
 		j = 0;
-		while (compute_disorder(ft_stackfirst(*a)) > 0 && j++ < ft_stacklen(*a) - 1)
+		while (compute_disorder(ft_stackfirst(*a)) > 0 && j++ < len - 1)
 		{
 			if ((*a)->content > (*a)->next->content)
 				sa(a);
