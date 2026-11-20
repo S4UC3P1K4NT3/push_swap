@@ -21,12 +21,13 @@ void	bubble_sort(t_stack **a)
 	i = 0;
 	while (i < len -1)
 	{
-		ft_printf("test : %d\n",(*a)->content);
+		
 		j = 0;
 		while ( j++ < len -1)
 		{
 			if ((*a)->content > (*a)->next->content)
 				sa(a);
+			ft_printf("test : %d\n",(*a)->content);
 			ra(a);
 			*a = (*a)->next;
 		}
