@@ -28,8 +28,9 @@ void	bubble_sort(t_stack **a)
 			if ((*a)->content > (*a)->next->content)
 				sa(a);
 			ft_printf("test : %d\n",(*a)->content);
-			ra(a);
 			*a = (*a)->next;
+			ra(a);
+			
 		}
 		*a = ft_stackfirst(*a);
 		i++;
