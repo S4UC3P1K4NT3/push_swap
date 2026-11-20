@@ -6,7 +6,7 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/17 10:30:47 by jeguiber          #+#    #+#             */
-/*   Updated: 2026/11/18 13:31:04 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/20 14:01:50 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	rr(t_stack **lsta, t_stack **lstb)
 {
 	ra(lsta);
-	ra(lstb);
+	rb(lstb);
 }
