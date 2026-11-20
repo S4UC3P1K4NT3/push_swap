@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/17 09:47:45 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 13:37:02 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/20 15:30:09 by gtomasin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 void	ra(t_stack **lst)
 {
 	t_stack	*tmp;
+	t_stack	*down;
 
 	if (!lst || ft_stacklen(*lst) < 2)
 		return ;
-	tmp = ft_stacklast(*lst);
-	tmp->prev->next = NULL;
-	tmp->prev = NULL;
-	tmp->next = *lst;
-	(*lst)->prev = tmp;
-	*lst = tmp;
+	tmp = ft_stackfirst(*lst);
+	down = ft_stacklast(*lst);
+	down->prev->next = NULL;
+	down->prev = NULL;
+	down->next = tmp;
+	tmp->prev = down;
+	*lst = down;
 }

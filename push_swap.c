@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 13:37:54 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/20 16:24:48 by gtomasin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ static int	sort(int strategy, t_stack **a, t_stack **b)
 	// }
 	(void) strategy;
 	(void) b;
+	*a = ft_stackfirst(*a);
 	bubble_sort(a);
 	print_nodes(*a);
 	return (0);
@@ -76,9 +77,9 @@ static int	get_error(char *er, int errcode)
 {
 	if (errcode == 2)
 		ft_printf("too much flags used \"%s\", aborting.\n", er);
-	if (errcode == 3)
+	else if (errcode == 3)
 		ft_printf("numbers cannot be duplicates \"%s\", aborting.\n", er);
-	if (errcode == 4)
+	else if (errcode == 4)
 		ft_printf("value goes beyond integer's limits \"%s\", aborting.\n", er);
 	else
 		ft_printf("invalid argument given (\"%s\"), aborting.\n", er);
@@ -111,7 +112,5 @@ int	main(int argc, char *argv[])
 		else
 			return (get_error(argv[i], 1));
 	}
-	ra(&a_stack);
-	print_nodes(a_stack);
 	return (sort(strategy, &a_stack, &b_stack));
 }

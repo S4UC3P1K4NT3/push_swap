@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:33:37 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 13:33:39 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/20 16:26:11 by gtomasin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,4 @@ void	rrr(t_stack **lsta, t_stack **lstb);
 void	bucket_sort(t_stack **a, t_stack **b);
 int		compute_disorder(t_stack *a);
 void	bubble_sort(t_stack **a);
-void	print_nodes2(t_stack *stack);
 #endif
