@@ -6,7 +6,7 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 16:53:44 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/20 17:14:48 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,18 +58,12 @@ static int	sort(int strategy, t_stack **a, t_stack **b)
 {
 	// if (strategy == 3)
 	// 	return (merge_sort(a, b), print_nodes(*a));
-	// else if (strategy == 2)
-	// 	return (bucket_sort(a), print_nodes(*a));
-	// else if (strategy == 1)
-	// 	return (bubble_sort(a), print_nodes(*a));
-	// else if (strategy == 4 || strategy == 5)
-	// {
-	// 	return ;
-	// }
-	(void) strategy;
-	*a = ft_stackfirst(*a);
-	bucket_sort(a, b);
-	print_nodes(*a);
+	if (strategy == 2)
+		return (bucket_sort(a, b), print_nodes(*a));
+	else if (strategy == 1)
+		return (bubble_sort(a), print_nodes(*a));
+	else if (strategy == 4 || strategy == 5)
+		return (bubble_sort(a), print_nodes(*a));
 	return (0);
 }
 
