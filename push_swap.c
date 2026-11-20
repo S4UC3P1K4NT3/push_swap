@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   push_swap.c                                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/13 09:39:58 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/11/20 00:55:46 by gtomasin        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
+/*   Updated: 2026/11/20 12:49:46 by gtomasin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	compute_disorder(t_stack *a)
 	return (mistakes);
 }
 
-static int	print_nodes(t_stack *stack)
+int	print_nodes(t_stack *stack)
 {
 	stack = ft_stackfirst(stack);
 	ft_printf("=====================================================");
@@ -47,7 +47,7 @@ static int	print_nodes(t_stack *stack)
 	ft_printf("==================\n\n");
 	while (stack != NULL)
 	{
-		ft_printf("%d\n", stack->content);
+		ft_printf("%d ", stack->content);
 		stack = stack->next;
 	}
 	return (0);
