@@ -6,11 +6,22 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 11:48:03 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 16:49:48 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/20 17:09:52 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	print_node2(t_stack *stack)
+{
+	stack = ft_stackfirst(stack);
+	while (stack != NULL)
+	{
+		ft_printf("%d ", stack->content);
+		stack = stack->next;
+	}
+	ft_printf("\n");
+}
 
 static size_t	minp(t_stack *b)
 {
@@ -78,13 +89,17 @@ static void	dis(t_stack **a, t_stack **b, long min, long max, long nb)
 		j = 0;
 		while (j++ < len)
 		{
-			if (ft_stacklast(*a)->content >= minv &&
-					ft_stacklast(*a)->content <= maxv)
-			pb(b, a);
+			if (ft_stacklast(*a)->content >= minv && ft_stacklast(*a)->content <= maxv)
+			{
+				ft_printf("pb\n");
+				pb(b, a);
+				print_node2(*b);
+			}
 			else
 				ra(a);
 		}
 		i++;
+		print_node2(*a);
 	}
 	smol_sort(a, b);
 }

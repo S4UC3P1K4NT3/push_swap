@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 16:39:42 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/20 16:53:44 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,8 @@ static int	sort(int strategy, t_stack **a, t_stack **b)
 	// 	return ;
 	// }
 	(void) strategy;
-	(void) b;
 	*a = ft_stackfirst(*a);
-	bubble_sort(a);
+	bucket_sort(a, b);
 	print_nodes(*a);
 	return (0);
 }

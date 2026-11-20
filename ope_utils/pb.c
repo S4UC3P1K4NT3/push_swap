@@ -6,7 +6,7 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 14:00:31 by jeguiber          #+#    #+#             */
-/*   Updated: 2026/11/20 14:03:46 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/20 17:12:02 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@ void	pb(t_stack **lstb, t_stack **lsta)
 {
 	t_stack	*tmp;
 
-	if (!lsta || !lstb || !*lstb)
+	if (!lstb || !lsta || !*lsta)
 		return ;
-	tmp = ft_stacklast(*lstb);
-	*lstb = tmp->prev;
-	if (*lstb)
-		(*lstb)->next = NULL;
-	tmp->prev = ft_stacklast(*lsta);
+	tmp = ft_stacklast(*lsta);
+	*lsta = tmp->prev;
+	if (*lsta)
+		(*lsta)->next = NULL;
+	tmp->prev = ft_stacklast(*lstb);
 	if (tmp->prev)
 		tmp->prev->next = tmp;
 	else
-		*lsta = tmp;
+		*lstb = tmp;
 	tmp->next = NULL;
 }
