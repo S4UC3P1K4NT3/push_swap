@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 12:49:46 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/20 13:37:54 by gtomasin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	compute_disorder(t_stack *a)
 	return (mistakes);
 }
 
-int	print_nodes(t_stack *stack)
+static int	print_nodes(t_stack *stack)
 {
 	stack = ft_stackfirst(stack);
 	ft_printf("=====================================================");
@@ -111,5 +111,7 @@ int	main(int argc, char *argv[])
 		else
 			return (get_error(argv[i], 1));
 	}
+	ra(&a_stack);
+	print_nodes(a_stack);
 	return (sort(strategy, &a_stack, &b_stack));
 }
