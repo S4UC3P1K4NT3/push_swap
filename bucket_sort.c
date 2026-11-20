@@ -6,11 +6,10 @@
 /*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/19 11:48:03 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/11/20 01:05:12 by gtomasin        ###   ########.fr        */
+/*   Updated: 2026/11/20 01:07:14 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "push_swap.h"
 
 static void	dis(t_stack **a, t_stack **b, long min, long max, size_t nb)
