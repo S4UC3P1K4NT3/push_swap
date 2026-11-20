@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 16:24:48 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/20 16:39:42 by gtomasin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ static int	print_nodes(t_stack *stack)
 		ft_printf("%d ", stack->content);
 		stack = stack->next;
 	}
+	ft_printf("\n");
 	return (0);
 }
 
