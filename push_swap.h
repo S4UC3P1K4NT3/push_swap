@@ -6,12 +6,13 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:33:37 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 16:54:11 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/20 17:53:45 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+# include <stdio.h>
 # include "ft_printf.h"
 # include "libft.h"
 
