@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:33:37 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 12:49:51 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/20 14:06:44 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ int		dupecheck(char *str, t_stack *lst);
 void	sa(t_stack **lst);
 void	ss(t_stack **lsta, t_stack **lstb);
 void	pa(t_stack **lsta, t_stack **lstb);
+void	pb(t_stack **lstb, t_stack **lsta);
 void	ra(t_stack **lst);
+void	rb(t_stack **lst);
 void	rr(t_stack **lsta, t_stack **lstb);
 void	rra(t_stack **lst);
 void	rrr(t_stack **lsta, t_stack **lstb);
