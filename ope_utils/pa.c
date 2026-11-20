@@ -6,7 +6,7 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/17 09:47:35 by jeguiber          #+#    #+#             */
-/*   Updated: 2026/11/20 17:16:30 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/20 17:22:58 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,4 @@ void	pa(t_stack **lsta, t_stack **lstb)
 	else
 		*lsta = tmp;
 	tmp->next = NULL;
-	ft_printf("pa\n");
 }
