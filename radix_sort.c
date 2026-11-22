@@ -6,7 +6,7 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/22 10:56:43 by username         #+#    #+#              */
-/*   Updated: 2026/11/22 18:32:00 by username        ###   ########.fr        */
+/*   Updated: 2026/11/22 18:32:54 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	bnrylen(int mx)
 	int	i;
 
 	i = 1;
-	while (mx = mx / 2)
+	while (mx /= 2)
 		i++;
 	return (i);
 }
