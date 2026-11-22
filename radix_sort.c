@@ -6,7 +6,7 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/22 10:56:43 by username         #+#    #+#              */
-/*   Updated: 2026/11/22 18:27:27 by username        ###   ########.fr        */
+/*   Updated: 2026/11/22 18:29:25 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ static char	*itob(int nmb, int max)
 
 void	radix_sort(t_stack **a, t_stack **b)
 {
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 	size_t	len;
 
 	len = ft_stacklen(*a);
@@ -92,7 +92,7 @@ void	radix_sort(t_stack **a, t_stack **b)
 		i = 0;
 		while (i < len)
 		{
-			if (itob(a->content, maxnmb(*a))[j] == 0)
+			if (itob((*a)->content, maxnmb(*a))[j] == 0)
 				pb(b, a);
 			else
 				ra(a);
