@@ -6,13 +6,24 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/22 10:56:43 by username         #+#    #+#              */
-/*   Updated: 2026/11/22 18:41:21 by username        ###   ########.fr        */
+/*   Updated: 2026/11/22 18:42:28 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+static int	print_nodes(t_stack *stack)
+{
+	stack = ft_stackfirst(stack);
+	while (stack != NULL)
+	{
+		ft_printf("%d ", stack->content);
+		stack = stack->next;
+	}
+	ft_printf("\n");
+}
 
 static int	bnrylen(int mx)
 {

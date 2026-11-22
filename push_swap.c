@@ -6,7 +6,7 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/13 09:39:58 by username         #+#    #+#              */
-/*   Updated: 2026/11/22 18:39:19 by username        ###   ########.fr        */
+/*   Updated: 2026/11/22 18:42:00 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static int	print_nodes(t_stack *stack)
 static int	sort(int strategy, t_stack **a, t_stack **b)
 {
 	if (strategy == 3 || strategy == 5)
-		return (pb(b, a), print_nodes(*b));
+		return (radix_sort(a, b), print_nodes(*a));
 	if (strategy == 2)
 		return (bucket_sort(a, b), print_nodes(*a));
 	else if (strategy == 1)
