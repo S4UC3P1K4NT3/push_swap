@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 17:53:59 by jeguiber         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   push_swap.c                                       :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/11/13 09:39:58 by username         #+#    #+#              */
+/*   Updated: 2026/11/22 18:25:53 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,11 @@ static int	print_nodes(t_stack *stack)
 
 static int	sort(int strategy, t_stack **a, t_stack **b)
 {
-	// if (strategy == 3)
-	// 	return (merge_sort(a, b), print_nodes(*a));
+	if (strategy == 3 || strategy == 5)
+		return (radix_sort(a, b), print_nodes(*a));
 	if (strategy == 2)
 		return (bucket_sort(a, b), print_nodes(*a));
 	else if (strategy == 1)
-		return (bubble_sort(a), print_nodes(*a));
-	else if (strategy == 4 || strategy == 5)
 		return (bubble_sort(a), print_nodes(*a));
 	return (0);
 }
