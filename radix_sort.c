@@ -6,7 +6,7 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/22 10:56:43 by username         #+#    #+#              */
-/*   Updated: 2026/11/22 18:43:49 by username        ###   ########.fr        */
+/*   Updated: 2026/11/22 18:46:06 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,12 @@ void	radix_sort(t_stack **a, t_stack **b)
 		i = len;
 		while (i-- > 0)
 		{
+			*a = ft_stackfirst(*a);
 			if (itob((*a)->content, maxnmb(*a))[j] == '0')
 				pb(b, a);
 			else
-				ra(a);
+				rra(a);
 			print_nodes2(*b);
-			*a = ft_stackfirst(*a);
 		}
 		while (b)
 			pa(a, b);
