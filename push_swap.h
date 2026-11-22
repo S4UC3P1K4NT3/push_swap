@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/13 09:33:37 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/20 17:53:45 by jeguiber         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   push_swap.h                                       :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/11/13 09:33:37 by username         #+#    #+#              */
+/*   Updated: 2026/11/22 18:27:48 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,5 @@ void	rrr(t_stack **lsta, t_stack **lstb);
 void	bucket_sort(t_stack **a, t_stack **b);
 int		compute_disorder(t_stack *a);
 void	bubble_sort(t_stack **a);
+void	radix_sort(t_stack **a, t_stack **b);
 #endif

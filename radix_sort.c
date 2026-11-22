@@ -6,7 +6,7 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/22 10:56:43 by username         #+#    #+#              */
-/*   Updated: 2026/11/22 18:24:58 by username        ###   ########.fr        */
+/*   Updated: 2026/11/22 18:27:27 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,4 @@ void	radix_sort(t_stack **a, t_stack **b)
 		}
 		j++;
 	}
-}
-
-int	main(void)
-{
-	printf("res test :%s\n", itob(6, 60));
 }
