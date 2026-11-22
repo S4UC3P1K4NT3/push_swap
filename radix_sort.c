@@ -6,7 +6,7 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/22 10:56:43 by username         #+#    #+#              */
-/*   Updated: 2026/11/22 18:43:20 by username        ###   ########.fr        */
+/*   Updated: 2026/11/22 18:43:49 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static int	print_nodes2(t_stack *stack)
+static void	print_nodes2(t_stack *stack)
 {
 	stack = ft_stackfirst(stack);
 	while (stack != NULL)
