@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/13 09:39:58 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/11/24 13:36:05 by gtomasin        ###   ########.fr        */
+/*   Updated: 2026/11/24 16:21:55 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,13 +89,13 @@ static int	sort(int strategy, t_stack **a, t_stack **b)
 	return (0);
 }
 
-static int	get_error(char *er, int errcode)
+static int	get_error(char *er, int strategy, t_stack *a)
 {
-	if (errcode == 2)
+	if (strategy != 5 && check4flags(er) > 0)
 		ft_printf("too much flags used \"%s\", aborting.\n", er);
-	else if (errcode == 3)
+	else if (dupecheck(er, a) == 1)
 		ft_printf("numbers cannot be duplicates \"%s\", aborting.\n", er);
-	else if (errcode == 4)
+	else if (check4flags(er) == -2)
 		ft_printf("value goes beyond integer's limits \"%s\", aborting.\n", er);
 	else
 		ft_printf("invalid argument given (\"%s\"), aborting.\n", er);
@@ -119,14 +119,8 @@ int	main(int argc, char *argv[])
 			ft_stackadd_back(&a_stack, ft_atoi(argv[i]));
 		else if (strategy == 5 && check4flags(argv[i]) > 0)
 			strategy = check4flags(argv[i]);
-		else if (strategy != 5 && check4flags(argv[i]) > 0)
-			return (get_error(argv[i], 2));
-		else if (check4flags(argv[i]) == 0 && dupecheck(argv[i], a_stack) == 1)
-			return (get_error(argv[i], 3));
-		else if (check4flags(argv[i]) == -2)
-			return (get_error(argv[i], 4));
 		else
-			return (get_error(argv[i], 1));
+			return (get_error(argv[i], strategy, a_stack));
 	}
 	return (sort(strategy, &a_stack, &b_stack));
 }

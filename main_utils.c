@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/13 12:49:03 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/11/24 12:16:09 by gtomasin        ###   ########.fr        */
+/*   Updated: 2026/11/24 16:17:41 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	dupecheck(char *str, t_stack *lst)
 {
 	int	nmb;
 
-	nmb = atoi(str);
+	nmb = ft_atoi(str);
 	lst = ft_stackfirst(lst);
 	while (lst)
 	{
