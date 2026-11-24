@@ -6,7 +6,7 @@
 /*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/22 10:56:43 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/11/24 13:30:03 by gtomasin        ###   ########.fr        */
+/*   Updated: 2026/11/24 17:14:31 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ static int	bnrylen(int mx)
 	int	i;
 
 	i = 1;
-	while (mx /= 2)
+	while (mx / 2)
+	{
 		i++;
+		mx = mx / 2;
+	}
 	return (i);
 }
 
@@ -47,8 +50,9 @@ static char	*itob(int nmb, int max)
 	i = 0;
 	res = malloc((bnrylen(max) + 1) * sizeof(char));
 	tmp = nmb * 2;
-	while (tmp /= 2)
+	while (tmp / 2)
 	{
+		tmp = tmp / 2;
 		res[i] = tmp % 2 + '0';
 		i++;
 	}
