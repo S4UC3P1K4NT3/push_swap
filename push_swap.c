@@ -3,28 +3,14 @@
 /*                                                       :::      ::::::::    */
 /*   push_swap.c                                       :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
+/*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/13 09:39:58 by username         #+#    #+#              */
-/*   Updated: 2026/11/22 18:42:00 by username        ###   ########.fr        */
+/*   Created: 2026/11/13 09:39:58 by gtomasin         #+#    #+#              */
+/*   Updated: 2026/11/24 13:36:05 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	compute_disorder(t_stack *a)
-{
-	int	mistakes;
-
-	mistakes = 0;
-	while (a->next)
-	{
-		if (a->content > a->next->content)
-			mistakes += 1;
-		a = a->next;
-	}
-	return (mistakes);
-}
 
 static int	print_nodes(t_stack *stack)
 {
@@ -54,14 +40,52 @@ static int	print_nodes(t_stack *stack)
 	return (0);
 }
 
+double	compute_disorder(t_stack *a)
+{
+	int		mistakes;
+	int		total_pairs;
+	int		actualnmb;
+	size_t	i;
+	size_t	j;
+
+	mistakes = 0;
+	total_pairs = 0;
+	i = 0;
+	while (i++ < ft_stacklen(a) - 1)
+	{
+		a = ft_stackfirst(a);
+		j = 0;
+		while (j++ < i - 1)
+			a = a->next;
+		actualnmb = a->content;
+		while (a->next != NULL)
+		{
+			a = a->next;
+			if (actualnmb > a->content)
+				mistakes++;
+			total_pairs++;
+		}
+	}
+	return ((double) mistakes / (double) total_pairs);
+}
+
 static int	sort(int strategy, t_stack **a, t_stack **b)
 {
-	if (strategy == 3 || strategy == 5)
+	if (strategy == 3)
 		return (radix_sort(a, b), print_nodes(*a));
-	if (strategy == 2)
+	else if (strategy == 2)
 		return (bucket_sort(a, b), print_nodes(*a));
 	else if (strategy == 1)
 		return (bubble_sort(a), print_nodes(*a));
+	else
+	{
+		if (compute_disorder(*a) < 0.2)
+			return (bubble_sort(a), print_nodes(*a));
+		else if (compute_disorder(*a) >= 0.2 && compute_disorder(*a) < 0.5)
+			return (bucket_sort(a, b), print_nodes(*a));
+		else
+			return (radix_sort(a, b), print_nodes(*a));
+	}
 	return (0);
 }
 

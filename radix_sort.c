@@ -3,27 +3,14 @@
 /*                                                       :::      ::::::::    */
 /*   radix_sort.c                                      :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
+/*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/22 10:56:43 by username         #+#    #+#              */
-/*   Updated: 2026/11/22 18:46:06 by username        ###   ########.fr        */
+/*   Created: 2026/11/22 10:56:43 by gtomasin         #+#    #+#              */
+/*   Updated: 2026/11/24 13:30:03 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
-
-static void	print_nodes2(t_stack *stack)
-{
-	stack = ft_stackfirst(stack);
-	while (stack != NULL)
-	{
-		ft_printf("%d ", stack->content);
-		stack = stack->next;
-	}
-	ft_printf("\n");
-}
 
 static int	bnrylen(int mx)
 {
@@ -74,6 +61,21 @@ static char	*itob(int nmb, int max)
 	return (res);
 }
 
+static void	rstack(t_stack **a, t_stack **b)
+{
+	size_t	len;
+
+	len = ft_stacklen(*a);
+	while (len--)
+	{
+		pb(b, a);
+		rb(b);
+	}
+	len = ft_stacklen(*b);
+	while (len--)
+		pa(a, b);
+}
+
 void	radix_sort(t_stack **a, t_stack **b)
 {
 	size_t	i;
@@ -87,15 +89,15 @@ void	radix_sort(t_stack **a, t_stack **b)
 		i = len;
 		while (i-- > 0)
 		{
-			*a = ft_stackfirst(*a);
+			*a = ft_stacklast(*a);
 			if (itob((*a)->content, maxnmb(*a))[j] == '0')
 				pb(b, a);
 			else
-				rra(a);
-			print_nodes2(*b);
+				ra(a);
 		}
-		while (b)
+		while (*b)
 			pa(a, b);
 		j++;
 	}
+	rstack(a, b);
 }

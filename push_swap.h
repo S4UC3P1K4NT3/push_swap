@@ -3,16 +3,17 @@
 /*                                                       :::      ::::::::    */
 /*   push_swap.h                                       :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
+/*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/13 09:33:37 by username         #+#    #+#              */
-/*   Updated: 2026/11/22 18:27:48 by username        ###   ########.fr        */
+/*   Created: 2026/11/13 09:33:37 by gtomasin         #+#    #+#              */
+/*   Updated: 2026/11/24 13:20:00 by gtomasin        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <stdio.h>
+# include <stdlib.h>
 # include "ft_printf.h"
 # include "libft.h"
 
@@ -44,7 +45,7 @@ void	rra(t_stack **lst);
 void	rrb(t_stack **lst);
 void	rrr(t_stack **lsta, t_stack **lstb);
 void	bucket_sort(t_stack **a, t_stack **b);
-int		compute_disorder(t_stack *a);
+double	compute_disorder(t_stack *a);
 void	bubble_sort(t_stack **a);
 void	radix_sort(t_stack **a, t_stack **b);
 #endif
