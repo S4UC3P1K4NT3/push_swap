@@ -6,7 +6,7 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 11:48:03 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/25 12:16:39 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/25 12:40:27 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static void	move_bucket(t_stack **a, t_stack **b, long minv, long maxv)
 	while (j++ < len)
 	{
 		if (ft_stacklast(*a)->content >= minv
-				&& ft_stacklast(*a)->content <= maxv)
+			&& ft_stacklast(*a)->content <= maxv)
 		pb(b, a);
 		else
 			ra(a);
