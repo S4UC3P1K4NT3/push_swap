@@ -70,7 +70,7 @@ static void	move_bucket(t_stack **a, t_stack **b, long minv, long maxv)
 	{
 		if (ft_stacklast(*a)->content >= minv
 			&& ft_stacklast(*a)->content <= maxv)
-		pb(b, a);
+			pb(b, a);
 		else
 			ra(a);
 	}
