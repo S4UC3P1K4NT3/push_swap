@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:33:37 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/26 11:36:04 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/26 14:29:41 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ void	bucket_sort(t_stack **a, t_stack **b);
 double	compute_disorder(t_stack *a);
 void	bubble_sort(t_stack **a);
 void	radix_sort(t_stack **a, t_stack **b);
+t_stack	**ssplit(t_stack **a_stack, char **args);
+int		checkvalint(char *str);
 int		splitmain(char **args);
 #endif

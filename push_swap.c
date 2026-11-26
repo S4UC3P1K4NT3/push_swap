@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/26 11:34:31 by gtomasin         ###   ########.fr       */
+/*   Updated: 2026/11/26 14:30:08 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,8 +117,8 @@ int	main(int argc, char *argv[])
 		strategy = splitmain(argv);
 	if (strategy == -1)
 		return (get_error("errs", strategy, a_stack));
-	// else if (argc == 2 || argc == 3)
-	// 	return (sort(strategy, ssplit(a_stack), &b_stack));
+	else if (argc == 2 || argc == 3)
+		return (sort(strategy, ssplit(&a_stack, argv), &b_stack));
 	while (argv[++i] && i < argc)
 	{
 		if (check4flags(argv[i]) == 0 && dupecheck(argv[i], a_stack) == 0)
