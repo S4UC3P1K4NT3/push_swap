@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   push_swap.c                                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: gtomasin <gtomasin@student.42lehavre.fr>  #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/13 09:39:58 by gtomasin         #+#    #+#              */
-/*   Updated: 2026/11/24 16:21:55 by gtomasin        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
+/*   Updated: 2026/11/26 11:34:31 by gtomasin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ static int	get_error(char *er, int strategy, t_stack *a)
 	else if (check4flags(er) == -2)
 		ft_printf("value goes beyond integer's limits \"%s\", aborting.\n", er);
 	else
-		ft_printf("invalid argument given (\"%s\"), aborting.\n", er);
+		ft_printf("invalid arguments given, aborting.\n");
 	return (1);
 }
 
@@ -113,6 +113,12 @@ int	main(int argc, char *argv[])
 	a_stack = NULL;
 	b_stack = NULL;
 	strategy = 5;
+	if (argc == 2 || argc == 3)
+		strategy = splitmain(argv);
+	if (strategy == -1)
+		return (get_error("errs", strategy, a_stack));
+	// else if (argc == 2 || argc == 3)
+	// 	return (sort(strategy, ssplit(a_stack), &b_stack));
 	while (argv[++i] && i < argc)
 	{
 		if (check4flags(argv[i]) == 0 && dupecheck(argv[i], a_stack) == 0)
