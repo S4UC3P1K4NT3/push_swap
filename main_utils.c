@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main_utils.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gtomasin <gtomasin@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/13 12:49:03 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/26 11:11:06 by gtomasin         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   main_utils.c                                      :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/11/13 12:49:03 by username         #+#    #+#              */
+/*   Updated: 2026/11/28 14:01:08 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,12 @@ int	is_integer(char *str)
 		return (-1);
 	while (str[i] >= '0' && str[i] <= '9')
 		i++;
-	if (str[i] == '\0')
-		return (int_max_check(str));
+	while (while ((str[i] <= 13 && str[i] >= 9) || str[i] == 32))
+	{
+		if (str[i] == '\0')
+			return (int_max_check(str));
+		i++;
+	}
 	return (-1);
 }
 
