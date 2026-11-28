@@ -6,7 +6,7 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/13 12:49:03 by username         #+#    #+#              */
-/*   Updated: 2026/11/28 14:12:42 by username        ###   ########.fr        */
+/*   Updated: 2026/11/28 14:13:36 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	is_integer(char *str)
 		i++;
 	if (str[i] == '\0')
 	{
-		printf("il rentre '%c'.\n", str[i]);
+		printf("il rentre '%s'.\n", str);
 		return (int_max_check(str));
 	}
 	return (-1);
