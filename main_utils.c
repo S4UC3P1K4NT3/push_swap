@@ -6,7 +6,7 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/13 12:49:03 by username         #+#    #+#              */
-/*   Updated: 2026/11/28 14:05:52 by username        ###   ########.fr        */
+/*   Updated: 2026/11/28 14:06:43 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	is_integer(char *str)
 		i++;
 	while ((str[i] <= 13 && str[i] >= 9) || str[i] == 32)
 	{
-		printf("test '%s'.\n", str[i]);
+		printf("test '%c'.\n", str[i]);
 		if (str[i] == '\0')
 			return (int_max_check(str));
 		i++;
