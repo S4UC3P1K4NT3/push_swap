@@ -48,7 +48,5 @@ void	bucket_sort(t_stack **a, t_stack **b);
 double	compute_disorder(t_stack *a);
 void	bubble_sort(t_stack **a);
 void	radix_sort(t_stack **a, t_stack **b);
-t_stack	**ssplit(t_stack **a_stack, char **args);
-int		checkvalint(char *str);
-int		splitmain(char **args);
+int		parsearg(char *arg, t_stack **a_stack, int *strategy, int *split);
 #endif

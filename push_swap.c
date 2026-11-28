@@ -6,7 +6,7 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 09:39:58 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/26 14:30:08 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/28 09:46:20 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,29 +104,22 @@ static int	get_error(char *er, int strategy, t_stack *a)
 
 int	main(int argc, char *argv[])
 {
-	int		i;
 	int		strategy;
+	int		i;
+	int		split;
 	t_stack	*a_stack;
 	t_stack	*b_stack;
 
-	i = 0;
 	a_stack = NULL;
 	b_stack = NULL;
 	strategy = 5;
-	if (argc == 2 || argc == 3)
-		strategy = splitmain(argv);
-	if (strategy == -1)
-		return (get_error("errs", strategy, a_stack));
-	else if (argc == 2 || argc == 3)
-		return (sort(strategy, ssplit(&a_stack, argv), &b_stack));
-	while (argv[++i] && i < argc)
+	i = 1;
+	split = 0;
+	while (i < argc)
 	{
-		if (check4flags(argv[i]) == 0 && dupecheck(argv[i], a_stack) == 0)
-			ft_stackadd_back(&a_stack, ft_atoi(argv[i]));
-		else if (strategy == 5 && check4flags(argv[i]) > 0)
-			strategy = check4flags(argv[i]);
-		else
+		if (parsearg(argv[i], &a_stack, &strategy, &split) < 0)
 			return (get_error(argv[i], strategy, a_stack));
+		i++;
 	}
 	return (sort(strategy, &a_stack, &b_stack));
 }

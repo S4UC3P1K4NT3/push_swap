@@ -6,62 +6,57 @@
 /*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/26 10:53:54 by gtomasin          #+#    #+#             */
-/*   Updated: 2026/11/26 14:40:20 by jeguiber         ###   ########.fr       */
+/*   Updated: 2026/11/28 09:44:58 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	**ssplit(t_stack **a_stack, char **args)
+static void	freetab(char **tab)
 {
-	char	*str;
+	int	i;
+
+	i = 0;
+	while (tab && tab[i])
+		free(tab[i++]);
+	free(tab);
+}
+
+static int	addnmb(char *word, t_stack **a_stack, int *strategy)
+{
+	int	check;
+
+	check = check4flags(word);
+	if (check > 0 && *strategy == 5)
+		*strategy = check;
+	else if (check == 0 && dupecheck(word, *a_stack) == 0)
+		ft_stackadd_back(a_stack, ft_atoi(word));
+	else
+		return (-1);
+	return (0);
+}
+
+int	parsearg(char *arg, t_stack **a_stack, int *strategy, int *split)
+{
+	char	**tab;
+	int		j;
+	int		error;
 	int		i;
 
 	i = 0;
-	str = args[1];
-	if (args[2] && check4flags(args[2]) < 0)
-		str = args[2];
-	while (str[i])
-	{
-		while ((str[i] <= 13 && str[i] >= 9) || str[i] == 32)
-			i++;
-		while (str[i] <= '9' && str[i] >= '0')
-		{
-			ft_stackadd_back(a_stack, ft_atoi(&str[i]));
-			i++;
-		}
-	}
-	return (a_stack);
-}
-
-int	checkvalint(char *str)
-{
-	int	min;
-
-	min = 0;
-	while (str)
-	{
-		if (((*str <= 13 && *str >= 9) || *str == 32) || (*str <= '9' && *str >= '0'))
-			str++;
-		else
-			return (-1);
-		if (*str <= '9' && *str >= '0')
-			min++;
-	}
-	if (min == 0)
+	j = 0;
+	error = 0;
+	while (arg[i] && arg[i] != ' ')
+		i++;
+	if (arg[i] && *split)
 		return (-1);
-	else
-		return (0);
-}
-
-int	splitmain(char **args)
-{
-	int	strategy;
-
-	strategy = -1;
-	if ((check4flags(args[1]) < 0 && args[2]) && (checkvalint(args[1])))
-		strategy = check4flags(args[2]);
-	else if (check4flags(args[2]) < 0 && (checkvalint(args[2])))
-		strategy = check4flags(args[1]);
-	return (strategy);
+	if (arg[i])
+		*split = 1;
+	tab = ft_split(arg, ' ');
+	if (!tab || !tab[0])
+		return (freetab(tab), -1);
+	while (tab[j] && error == 0)
+		error = addnmb(tab[j++], a_stack, strategy);
+	freetab(tab);
+	return (error);
 }
