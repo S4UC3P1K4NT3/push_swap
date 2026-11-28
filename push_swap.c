@@ -121,5 +121,7 @@ int	main(int argc, char *argv[])
 			return (get_error(argv[i], strategy, a_stack));
 		i++;
 	}
+	if (strategy == 5)
+		strategy = 4;
 	return (sort(strategy, &a_stack, &b_stack));
 }
