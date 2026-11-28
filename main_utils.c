@@ -6,7 +6,7 @@
 /*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/13 12:49:03 by username         #+#    #+#              */
-/*   Updated: 2026/11/28 14:18:14 by username        ###   ########.fr        */
+/*   Updated: 2026/11/28 14:18:45 by username        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	is_integer(char *str)
 	int	i;
 
 	i = 0;
-	printf("test pour : '%s' \n")
+	printf("test pour : '%s' \n", str);
 	while ((str[i] <= 13 && str[i] >= 9) || str[i] == 32)
 		i++;
 	if (str[i] == '+' || str[i] == '-')
