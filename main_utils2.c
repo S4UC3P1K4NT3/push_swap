@@ -48,10 +48,14 @@ int	parsearg(char *arg, t_stack **a_stack, int *strategy, int *split)
 	error = 0;
 	while (arg[i] && arg[i] != ' ')
 		i++;
-	if (arg[i] && *split)
-		return (-1);
 	if (arg[i])
+	{
+		if (*split || ft_stacklen(*a_stack) > 0)
+			return (-1);
 		*split = 1;
+	}
+	else if (*split && check4flags(arg) == 0)
+		return (-1);
 	tab = ft_split(arg, ' ');
 	if (!tab || !tab[0])
 		return (freetab(tab), -1);
